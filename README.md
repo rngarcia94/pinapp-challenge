@@ -45,7 +45,7 @@ Nos retorna la lista de cliente y la fecha probable de cada uno.
 
 Nos retorna el promedio de edad de los clientes y la Desviacion Estandar de la muetra.
 
-**Extra**
+### **Extra**
 
 ### **POST:** /creacliente
 
