@@ -1,6 +1,7 @@
 package com.pinapprng.challenge.services;
 
 import com.pinapprng.challenge.models.ClientDTO;
+import com.pinapprng.challenge.models.ClientResponseDTO;
 import com.pinapprng.challenge.models.KpiDTO;
 import com.pinapprng.challenge.utils.ClientValidator;
 import java.time.LocalDate;
@@ -15,7 +16,7 @@ public class ClientService {
 
   private final ClientValidator clientValidator;
 
-  List<ClientDTO> clientDTOList = new ArrayList<>();
+  List<ClientResponseDTO> clientDTOList = new ArrayList<>();
 
   public ClientService(ClientValidator clientValidator) {
     this.clientValidator = clientValidator;
@@ -23,15 +24,21 @@ public class ClientService {
 
   public void addClient(ClientDTO client){
     clientValidator.validateAgeAndBirthDate(client);
-    client.setFechaProbableDeMuerte(calculateDeathDate(client));
-    clientDTOList.add(client);
+    ClientResponseDTO responseDTO = ClientResponseDTO.builder()
+        .nombre(client.getNombre())
+        .apellido(client.getApellido())
+        .edad(client.getEdad())
+        .fechaDeNacimiento(client.getFechaDeNacimiento())
+        .fechaProbableDeMuerte(calculateDeathDate(client))
+        .build();
+    clientDTOList.add(responseDTO);
   }
 
   public void addClients(List<ClientDTO> clients){
     clients.forEach(this::addClient);
   }
 
-  public List<ClientDTO> getClients(){
+  public List<ClientResponseDTO> getClients(){
     return clientDTOList;
   }
 

@@ -3,11 +3,16 @@ package com.pinapprng.challenge.models;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDate;
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
+import org.springframework.format.annotation.DateTimeFormat;
 
-@Builder
+@SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 public class ClientDTO {
@@ -16,8 +21,7 @@ public class ClientDTO {
   private String apellido;
   private int edad;
   @JsonAlias("fecha_de_nacimiento")
-  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
   private LocalDate fechaDeNacimiento;
-  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
-  private LocalDate fechaProbableDeMuerte;
+
 }

@@ -1,5 +1,6 @@
 package com.pinapprng.challenge.controllers;
 
+import com.pinapprng.challenge.models.ClientResponseDTO;
 import com.pinapprng.challenge.services.ClientService;
 import com.pinapprng.challenge.models.ClientDTO;
 import java.util.List;
@@ -30,7 +31,7 @@ public class ClientController {
   }
 
   @GetMapping("/listclientes")
-  public ResponseEntity<List<ClientDTO>> getClients(){
+  public ResponseEntity<List<ClientResponseDTO>> getClients(){
     return ResponseEntity.ok(clientService.getClients());
   }
 

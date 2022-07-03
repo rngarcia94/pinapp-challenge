@@ -10,7 +10,7 @@ public class ClientValidator {
 
   public void validateAgeAndBirthDate(ClientDTO client){
     if(calculateAge(client.getFechaDeNacimiento()) != client.getEdad()){
-      throw new RuntimeException("Edad y fecha de naciemiento no concuerdan");
+      throw new RuntimeException("Edad y fecha de naciemiento no concuerdan " + client.getFechaDeNacimiento());
     }
   }
 
