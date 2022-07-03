@@ -4,6 +4,8 @@ Aplicacion creada para el desafio tecnico de Pinapp.
 
 Esta desplegada en GCP
 
+Se puede correr localmente, utiliza el puerto 8080
+
 ## Uso 
 
 La aplicacion se puede probrar completamente usando Swagger desde GCP
