@@ -23,7 +23,7 @@ Nos deberia devolver: **pong**
 
 ## Endpoints
 
-**POST:** /creacliente 
+### **POST:** /creacliente 
 
 Crea un cliente usando el siguiente body:
 
@@ -37,17 +37,17 @@ Crea un cliente usando el siguiente body:
 ```
 Al crear un cliente verifica que la edad y la fecha de nacimiento concuerden.
 
-**GET:** /listclientes
+### **GET:** /listclientes
 
 Nos retorna la lista de cliente y la fecha probable de cada uno.
 
-**GET:** /kpideclientes
+### **GET:** /kpideclientes
 
 Nos retorna el promedio de edad de los clientes y la Desviacion Estandar de la muetra.
 
 **Extra**
 
-**POST:** /creacliente
+### **POST:** /creacliente
 
 Crea una lista de clientes usando el siguiente body:
 
@@ -69,7 +69,7 @@ Crea una lista de clientes usando el siguiente body:
 ```
 Al crear un cliente verifica que la edad y la fecha de nacimiento concuerden.
 
-**GET:** /ping
+### **GET:** /ping
 
 Se utiliza para checkear el estado de la aplicacion.
 
